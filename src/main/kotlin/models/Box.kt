@@ -1,4 +1,7 @@
-package cl.duoc.taskflow.models
+package models
 
-class Box {
-}
+data class Box(
+    val numero: Int,
+    var estado: EstadoBox = EstadoBox.Libre
+)
+

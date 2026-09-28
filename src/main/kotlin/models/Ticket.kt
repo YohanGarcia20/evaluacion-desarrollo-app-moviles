@@ -1,4 +1,8 @@
-package cl.duoc.taskflow.models
+package models
 
-class Ticket {
-}
+data class Ticket (
+    val numeroTicket: Int,
+    val paciente: Paciente,
+    val tiempoAtendidoMinutos: Int,
+    val montoCobrado: Double
+)
