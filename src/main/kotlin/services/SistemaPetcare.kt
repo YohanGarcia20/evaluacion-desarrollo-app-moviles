@@ -4,7 +4,7 @@ import exceptions.*
 import kotlinx.coroutines.delay
 import models.*
 
-// CORREGIDO: La 'C' de PetCare ahora es mayúscula para evitar errores de referencia en el Main
+
 class SistemaPetCare {
     val nombreSistema = "PetCare"
     val boxes: List<Box> = List(10) { i -> Box(numero = i + 1) }
@@ -64,7 +64,7 @@ class SistemaPetCare {
         return ticket
     }
 
-    // Consultas de negocio utilizando funciones de orden superior (R4 - IE 1.2.3)
+    // Consultas de negocio utilizando funciones de orden superior
     fun contarBoxesDisponibles(): Int = boxes.count { it.estado is EstadoBox.Libre }
 
     fun obtenerPacientesConvenio(): List<Paciente> =

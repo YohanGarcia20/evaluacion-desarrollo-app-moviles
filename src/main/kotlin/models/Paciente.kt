@@ -2,13 +2,13 @@ package models
 
 // Clase base abierta para herencia y polimorfismo
 open class Paciente (
-    val codigoAtencion: String, // CORREGIDO: antes decía codigoztencion
+    val codigoAtencion: String,
     val nombre: String,
     val especie: String,
     val fechaHoraIngreso: String,
     val tipoDueno: TipoDueno
 ) {
-    // CORREGIDO: Este es el método que faltaba y que las clases hijas necesitan sobrescribir
+
     open fun calcularCostoBase(minutos: Int): Double {
         return 0.0
     }

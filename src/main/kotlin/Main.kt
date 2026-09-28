@@ -15,7 +15,7 @@ fun main() = runBlocking {
     val p4 = Exotico("EX44RG", "Loro", "Amazónico", "2026-09-28 08:45", TipoDueno.Municipal, esSilvestre = true)
     val p5 = Exotico("EX77RG", "Iguana", "Verde", "2026-09-28 09:00", TipoDueno.Particular, esSilvestre = false)
 
-    // 1. Prueba de control de error: Codigo invalido (R6 & IE 1.3.4)
+    // 1. Prueba de control de error: Codigo invalido
     println("1. Probando error de código inválido:")
     try {
         val invalido = Canino("123ABC", "ErrorBot", "Mestizo", "2026-09-28 09:10", TipoDueno.Particular)
@@ -24,7 +24,7 @@ fun main() = runBlocking {
         println("   [Error Controlado]: ${e.message}\n")
     }
 
-    // 2. Registro asincrono de entradas (R5 & IE 1.3.3)
+    // 2. Registro asincrono de entradas
     println("2. Registrando entradas de pacientes...")
     try {
         sistema.registrarEntrada(p1)
@@ -56,13 +56,13 @@ fun main() = runBlocking {
         println("   [Error Controlado]: ${e.message}\n")
     }
 
-    // 5. Consultas de negocio (R4 - IE 1.2.3)
+    // 5. Consultas de negocio
     println("5. Ejecutando consultas de negocio:")
     println(" - Boxes disponibles: ${sistema.contarBoxesDisponibles()}")
     println(" - Pacientes con convenio: ${sistema.obtenerPacientesConvenio().map { it.nombre }}")
     println(" - Paciente con mas tiempo: ${sistema.obtenerPacienteMayorTiempo()?.nombre ?: "N/A"}")
     println(" - Codigos finalizados: ${sistema.obtenerCodigosFinalizados()}\n")
 
-    // 6. Generacion del Reporte de Cierre de Turno (R4 & IE 1.2.4)
+    // 6. Generacion del Reporte de Cierre de Turno
     sistema.generarReporteCierreTurno()
 }
